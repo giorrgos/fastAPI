@@ -1,29 +1,31 @@
-import uvicorn
-from fastapi import FastAPI
-import pickle
-from model_validation import CarUser
+import streamlit as st
+import requests
 
-app = FastAPI()
-pickle_path = open("car_recommender.pkl", "rb")
-model = pickle.load(pickle_path)
+# Define the API endopoint URL
+api_url = "http://127.0.0.1:8000/car/predict"
 
-# Define the routes
-@app.get('/')
-def index():
-    return {"message: 'Cars Recommemder ML API'"}
+# Define a function to make the API requests
+def call_api(endpoint, data):
+    response = requests.post(endpoint, json=data)
+    return response.json()
 
-@app.post('/car/predict')
-def predict_car_type(data:CarUser):
-    data = data.dict()
-    age = data['age']
-    gender = data['gender']
+# Create a Streamlit app
+def main():
+    st.title("Car Prediction App")
+    
+    # Create input fields for age and gender
+    age = st.number_input("Enter Age", min_value=0)
+    gender = st.selectbox("Select Gender", ["Male", "Female"])
 
-    prediction = model.predict([[age, gender]])
+    # Map the gender selection to an integer (you can modify this as per your API)
+    gender_mapping = {"Male": 0, "Female": 1}
+    gender_int = gender_mapping.get(gender)
 
-    return {
-        'prediction': prediction[0]
-    }
+    # Create a button to trigger the API call
+    if st.button("Predict"):
+        data = {"age": age, "gender": gender_int}
+        result = call_api(api_url, data)
+        st.write("Prediction:", result)  # Display the API response
 
-if __name__ == '__main__':
-    uvicorn.run(app, host = '127.0.0.1', port = 8000)
-
+if __name__ == "__main__":
+    main()
