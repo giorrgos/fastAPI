@@ -1,11 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
-import joblib
+import pickle
 from model_validation import CarUser
 
 app = FastAPI()
-joblib_in = open("car-recommender.joblib", "rb")
-model = joblib.load(joblib_in)
+pickle_path = open("car_recommender.pkl", "rb")
+model = pickle.load(pickle_path)
 
 # Define the routes
 @app.get('/')
