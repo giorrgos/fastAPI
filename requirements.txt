@@ -1,5 +1,6 @@
+ipykernel
 pandas
-sklearn
+scikit-learn
 joblib
 pydantic
 uvicorn

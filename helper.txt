@@ -1,0 +1,3 @@
+01 - ML Model: https://dorian599.medium.com/ml-create-your-first-model-68961dbb77d7
+02 - Persisting the model: https://dorian599.medium.com/ml-persisting-models-with-python-4e73c2fe40e2
+03 - Publish with FastAPI: https://dorian599.medium.com/ml-deploy-machine-learning-models-using-fastapi-6ab6aef7e777
