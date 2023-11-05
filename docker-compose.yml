@@ -17,3 +17,4 @@ services:
     volumes:
       - ./frontend_streamlit:/app.py  # Mount your app.py script into the container
 
+# docker compose up
