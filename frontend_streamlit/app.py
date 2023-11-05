@@ -2,8 +2,9 @@ import streamlit as st
 import requests
 
 # Define the API endopoint URL
-api_url = "http://127.0.0.1:8000/car/predict"
+#api_url = "http://backend_fastAPI.docker:8000/car/predict"
 
+api_url = "http://backend:8000/car/predict"
 # Define a function to make the API requests
 def call_api(endpoint, data):
     response = requests.post(endpoint, json=data)

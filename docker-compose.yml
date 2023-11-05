@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  backend:
+    image: car_rec_backend:latest  # Replace with your backend Docker image name
+    ports:
+      - 8000:8000  # Expose the FastAPI service on port 8000
+    volumes:
+      - ./backend_fastAPI:/main.py  # Mount your main.py script into the container
+  
+  frontend:
+    image: car_rec_frontend:latest  # Replace with your frontend Docker image name
+    ports:
+      - 8501:8501  # Expose the Streamlit app on port 8501
+    environment:
+      - BACKEND_URL=http://backend:8000  # Set the URL of the backend service
+    volumes:
+      - ./frontend_streamlit:/app.py  # Mount your app.py script into the container
+

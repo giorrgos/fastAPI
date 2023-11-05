@@ -19,3 +19,4 @@ EXPOSE 8501
 CMD ["streamlit", "run", "app.py"]
 
 # docker build -t car_rec_frontend:latest .
+# docker run -p 8501:8501 car_rec_frontend:latest
