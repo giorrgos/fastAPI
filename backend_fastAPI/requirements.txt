@@ -1,9 +1,7 @@
+uvicorn
+fastapi
 ipykernel
 pandas
 scikit-learn
 joblib
 pydantic
-uvicorn
-fastapi
-streamlit
-

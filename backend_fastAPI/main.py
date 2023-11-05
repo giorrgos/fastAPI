@@ -27,4 +27,6 @@ def predict_car_type(data:CarUser):
 if __name__ == '__main__':
     uvicorn.run(app, host = '127.0.0.1', port = 8000)
 
-# uvicorn fast_api:app
+# uvicorn main:app
+
+# docker run -p 8000:8000 car_recommender_backend:latest

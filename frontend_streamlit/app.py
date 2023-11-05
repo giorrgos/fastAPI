@@ -31,3 +31,5 @@ if __name__ == "__main__":
     main()
 
 # streamlit run app.py
+
+# docker run -p 8501:8501 car_recommender_frontend:latest
