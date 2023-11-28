@@ -18,3 +18,6 @@ services:
       - ./frontend_streamlit:/app.py  # Mount your app.py script into the container
 
 # docker compose up
+
+# Car prediction app at: http://localhost:8501/
+# App backend at: http://localhost:8000/
