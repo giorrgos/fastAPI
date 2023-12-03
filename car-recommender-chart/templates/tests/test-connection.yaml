@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "car-recommender-chart.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "car-recommender-chart.fullname" . }}:{{ .Values.fastapi.service.port }}']
   restartPolicy: Never
