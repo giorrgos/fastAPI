@@ -1,0 +1,15 @@
+fastapi:
+  image:
+    repository: carrecommender/car_rec_backend
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 8000
+
+streamlit:
+  image:
+    repository: carrecommender/car_rec_fronted
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 8501
