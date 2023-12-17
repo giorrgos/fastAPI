@@ -18,5 +18,6 @@ EXPOSE 8501
 # Command to start the FastAPI server
 CMD ["streamlit", "run", "app.py"]
 
+# Docker commands:
 # docker build -t car_rec_frontend:latest .
 # docker run -p 8501:8501 car_rec_frontend:latest

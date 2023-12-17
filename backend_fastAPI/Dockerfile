@@ -18,5 +18,6 @@ EXPOSE 8000:8000
 # Command to start the FastAPI server
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
+# Docker commands:
 # docker build -t car_rec_backend:latest .
 # docker run -p 8000:8000 car_rec_backend:latest

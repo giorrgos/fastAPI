@@ -2,9 +2,8 @@ import streamlit as st
 import requests
 
 # Define the API endopoint URL
-#api_url = "http://backend_fastAPI.docker:8000/car/predict"
+api_url = "http://localhost:8000/car/predict"
 
-api_url = "http://backend:8000/car/predict"
 # Define a function to make the API requests
 def call_api(endpoint, data):
     response = requests.post(endpoint, json=data)
@@ -31,6 +30,6 @@ def main():
 if __name__ == "__main__":
     main()
 
+# How to run locally:
 # streamlit run app.py
-
 # docker run -p 8501:8501 car_recommender_frontend:latest

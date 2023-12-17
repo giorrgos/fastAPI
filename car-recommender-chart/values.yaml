@@ -1,6 +1,6 @@
 fastapi:
   image:
-    repository: carrecommender/car_rec_backend
+    repository: acrcarrec.azurecr.io/car_rec_backend # ensure I am using the correct path on my ACR
     tag: latest
   service:
     type: ClusterIP
@@ -8,7 +8,7 @@ fastapi:
 
 streamlit:
   image:
-    repository: carrecommender/car_rec_fronted
+    repository: acrcarrec.azurecr.io/car_rec_frontend # # ensure I am using the correct path on my ACR
     tag: latest
   service:
     type: ClusterIP
